@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Rock Paper Scissor</p>
+    <div class="buttons">
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="Scissors">Scissor</button>
+    
+    </div>
+    <h1></h1>
+    <script>
+        var rand = (Math.floor(Math.random() * 3));
+        var computerChoice = '';
+        if(rand === 0){
+            computerChoice = "rock";
+        }
+        else if (rand === 1){
+            computerChoice = "Paper";
+        }
+        else if (rand == 2){
+            computerChoice = "Scissors"
+        }
+        
+        
+        //Main logic for game
+
+        //rock ka code
+       document.querySelector("#rock").addEventListener("click",function(){
+        if(computerChoice == "rock"){
+            document.querySelector("h1").innerHTML = "Its a tie"
+            
+        }
+        else if( computerChoice == "Scissors"){
+            document.querySelector("h1").innerHTML = "You win"
+        }
+        else if(computerChoice == "Paper"){
+            document.querySelector("h1").innerHTML = "You lose"
+        }
+        
+       })
+       //Paper ka code
+       document.querySelector("#paper").addEventListener("click",function(){
+        if(computerChoice == "Paper"){
+            document.querySelector("h1").innerHTML = "Its a tie"
+        }
+        else if(computerChoice == "rock"){
+            document.querySelector("h1").innerHTML = "You win"
+        }
+        else if(computerChoice == "Scissors")
+          document.querySelector("h1").innerHTML = "You lose"
+       })
+
+       document.querySelector("#Scissors").addEventListener("click",function(){
+        if(computerChoice == "Scissors"){
+            document.querySelector("h1").innerHTML = "Its a tie"
+        }
+        else if(computerChoice == "Paper"){
+            document.querySelector("h1").innerHTML = "You win"
+        }
+        else if(computerChoice == "rock")
+             document.querySelector("h1").innerHTML = "You lose"
+       })
+
+    </script>
+</body>
+</html>
